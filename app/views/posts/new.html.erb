@@ -18,8 +18,8 @@
       </div>
 
       <div class="form-grop mt-3">
-        <%= label(:post, :topic_id, "Выберите тему") %>
-        <%= select(:post, :topic_id, options_from_collection_for_select(@topics, "id", "title"), {}, {class: "form-control"}) %>
+        <%= label(:post, :topic, "Выберите тему") %>
+        <%= select(:post, :topic, options_from_collection_for_select(@topics, "id", "title"), {}, {class: "form-control"}) %>
       </div>
 
       <div class="form-group mt-3">
