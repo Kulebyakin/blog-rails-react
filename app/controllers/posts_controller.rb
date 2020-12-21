@@ -1,6 +1,13 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all()
+    @posts = Post.all().order( created_at: :DESC )
+  end
+
+  def topic
+    @topic = Topic.find_by(alias: params[:topic])
+    @posts = @topic.posts
+
+    render 'index'
   end
 
   def show
