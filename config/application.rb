@@ -11,6 +11,7 @@ module BlogRailsReact
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
     config.i18n.default_locale = :ru
+    config.autoload_paths << "#{Rails.root}/lib"
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
