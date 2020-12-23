@@ -8,8 +8,10 @@ class PostsController < ApplicationController
   end
 
   def topic
+    page_token = params.has_key?(:older) ? params[:older] : params[:newer]
+
     @topic = Topic.find_by(alias: params[:topic])
-    @posts = @topic.posts
+    paginate(page_token, @topic.id)
 
     render 'index'
   end
