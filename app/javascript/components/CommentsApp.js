@@ -18,8 +18,8 @@ class CommentsApp extends React.Component {
     return (
       <div>
         <div id="comment_error"></div>
-        <CommentsForm csrf_token={this.props.csrf_token} onSubmit={this.handleSubmitComment} />
         <Comments comments={this.state.comments} post_id={this.props.post_id} replies={this.state.replies} csrf_token={this.props.csrf_token} />
+        <CommentsForm csrf_token={this.props.csrf_token} onSubmit={this.handleSubmitComment} />
       </div>
     );
   }
@@ -36,7 +36,7 @@ class CommentsApp extends React.Component {
         $('div#comment_error').html('');
         if (data.errors != null && !jQuery.isEmptyObject(data.errors)) {
           for (var error of data.errors['body']) {
-            $('div#comment_error').append('<div class="alert alert-danger alert-dismissible fade show" role="alert">' + error + '</div>');
+            $('div#comment_error').append('<div class="alert alert-danger alert-dismissible fade show" role="alert">' + error + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
           }
         } else {
           $('div#comment_error');
@@ -45,7 +45,7 @@ class CommentsApp extends React.Component {
         }
       }.bind(this),
       error: function(xhr, status, err) {
-        console.error('/comments/create' + this.props.post_id, status, err.toString());
+        console.error('/comments/create/' + this.props.post_id, status, err.toString());
       }.bind(this)
     });
   }
