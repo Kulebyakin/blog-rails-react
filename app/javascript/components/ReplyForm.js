@@ -1,0 +1,23 @@
+import React from "react"
+import CommentsForm from "./CommentsForm"
+
+class ReplyForm extends CommentsForm {
+  render () {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <div className="form-group">
+          <textarea
+            className="form-control"
+            rows="3"
+            name="body"
+            value={this.state.body}
+            onChange={this.handleBodyChange}></textarea>
+        </div>
+        <input type="hidden" value={this.props.csrf_token} />
+        <button type="submit" className="Btn btn-primery">Отправить</button>
+      </form>
+    );
+  }
+}
+
+export default ReplyForm
