@@ -46,6 +46,8 @@
           <ul class="navbar-nav ml-auto">
             <div>
               <% if user_signed_in? %>
+                <%= link_to 'Новый пост', posts_new_path, class:"btn btn-dark" %>
+                <%= link_to 'Edit profile', edit_user_registration_path, class:"btn btn-dark" %>
                 <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class:"btn btn-dark" %>
               <% else %>
                 <%= link_to 'Регистрация', new_user_registration_path, class:"btn btn-primary" %>
@@ -64,9 +66,12 @@
     <div class="row">
       <div class="col-md-8">
 
-        <% if notice.present? || alert.present? %>
+        <% if notice.present?  %>
           <div class="alert alert-success" role="alert">
             <%= notice %>
+          </div>
+        <% elsif alert.present? %>
+          <div class="alert alert-danger" role="alert">
             <%= alert %>
           </div>
         <% end %>

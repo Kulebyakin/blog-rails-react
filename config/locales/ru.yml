@@ -23,9 +23,13 @@ ru:
     registrations:
       user:
         signed_up: "Вы успешно зарегистрировались" 
+        updated: "Профиль успешно обновлен" 
+        destroyed: "Аккаунт успешно удален" 
     failure:
       user:
         already_authenticated: "Вы уже авторизованы"
+        not_found_in_database: "Не правильное имя пользователя или пароль"
+        invalid: "Не правильное имя пользователя или пароль"
     sessions:
       user:
         signed_in: "Вы успешно вошли"
