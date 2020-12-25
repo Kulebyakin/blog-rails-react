@@ -33,7 +33,9 @@ class Comment extends React.Component {
         $('div#reply_error_' + this.props.comment.id).html('');
         if (data.errors != null && !jQuery.isEmptyObject(data.errors)) {
           for (var error of data.errors['body']) {
-            $('div#reply_error_' + this.props.comment.id).append('<div class="alert alert-danger alert-dismissible fade show" role="alert">' + error + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+            $('div#reply_error_' + this.props.comment.id).append(
+              '<div class="alert alert-danger alert-dismissible fade show" role="alert">' + error + 
+              '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
           }
         } else {
           $('div#reply_error_' + this.props.comment.id);
