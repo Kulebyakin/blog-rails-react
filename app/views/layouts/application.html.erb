@@ -61,8 +61,10 @@
       <div class="col-md-8">
 
         <% if notice.present? || alert.present? %>
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+          <div class="alert alert-success" role="alert">
+            <%= notice %>
+            <%= alert %>
+          </div>
         <% end %>
 
         <%= yield %>
