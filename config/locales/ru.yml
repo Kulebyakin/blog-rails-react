@@ -19,3 +19,18 @@ ru:
               required: "Комментарий не может быть пустым"
               too_short: "Комментарий слишком короткий"
               too_long: "Комментарий слишком длинный"
+  devise:
+    registrations:
+      user:
+        signed_up: "Вы успешно зарегистрировались" 
+    failure:
+      user:
+        already_authenticated: "Вы уже авторизованы"
+    sessions:
+      user:
+        signed_in: "Вы успешно вошли"
+        signed_out: "Вы успешно вышли"
+        already_signed_out: "Вы не были авторизованы"
+
+
+    
