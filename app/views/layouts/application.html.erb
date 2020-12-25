@@ -45,8 +45,12 @@
           </ul>
           <ul class="navbar-nav ml-auto">
             <div>
-              <a href="/users/sign_up" role="button" class="btn btn-primary">Регистрация</a>
-              <a href="/users/sign_in" role="button" class="btn btn-dark">Войти</a>
+              <% if user_signed_in? %>
+                <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class:"btn btn-dark" %>
+              <% else %>
+                <%= link_to 'Регистрация', new_user_registration_path, class:"btn btn-primary" %>
+                <%= link_to 'Войти', new_user_session_path, class:"btn btn-dark" %>
+              <% end %>
             </div>
           </ul>
         </div>
