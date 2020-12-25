@@ -1,9 +1,25 @@
-# activerecord.errors.models.user.attributes.name.blank
-
 ru:
+  errors:
+    messages:
+      not_saved: "Введенные данные не сохранены"
   activerecord:
     errors:
       models:
+        user:
+          attributes:
+            username:
+              blank: "Не заполнено поле username"
+              invalid: "Username занят"
+            email:
+              taken: "Этот email уже занят"
+            current_password:
+              invalid: "Не правильное имя пользователя или пароль"
+              blank: "Не заполнено поле текущий пароль"
+            password:
+              blank: "Не заполнено поле пароль"
+              too_short: "Пароль слишком короткий"
+            password_confirmation:
+              confirmation: "Пароль не совпадает с подтверждением"
         post:
           attributes:
             topic:
