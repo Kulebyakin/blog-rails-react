@@ -1,28 +1,22 @@
-<div class="row">
+<!-- Post Content Column -->
 
-  <!-- Post Content Column -->
-  <div class="col-lg-8">
+<!-- Title -->
+<h3 class="mt-4"><%= @post.title %></h1>
 
-    <!-- Title -->
-    <h1 class="mt-4"><%= @post.title %></h1>
+<!-- Author -->
+<p class="lead">
+</p>
 
-    <!-- Author -->
-    <p class="lead">
-    </p>
+<hr>
 
-    <hr>
+<!-- Date/Time -->
+<p>Posted on <%= @post.created_at %></p>
 
-    <!-- Date/Time -->
-    <p>Posted on <%= @post.created_at %></p>
+<hr>
 
-    <hr>
+<!-- Post Content -->
+<%= simple_format(@post.body) %>
+<hr>
 
-    <!-- Post Content -->
-    <%= simple_format(@post.body) %>
-    <hr>
-
-    <!-- Comments Form -->
-    <%= react_component("CommentsApp", { comments: @comments, replies: @replies, csrf_token: form_authenticity_token, post_id: @post.id }) %>
-
-    
-  </div>
+<!-- Comments Form -->
+<%= react_component("CommentsApp", { comments: @comments, replies: @replies, csrf_token: form_authenticity_token, post_id: @post.id }) %>

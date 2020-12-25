@@ -14,52 +14,64 @@
   <div class="container">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">Хабрахабр</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/posts/development">Разработка</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/posts/administration">Администрирование</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/posts/design">Дизайн</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/posts/management">Менеджмент</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/posts/marketing">Маркетинг</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/posts/science">Научпоп</a>
-          </li>
-          <%# <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li> %>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <div>
-            <button type="button" class="btn btn-primary">Регистрация</button>
-            <button type="button" class="btn btn-dark">Войти</button>
-          </div>
-        </ul>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Хабрахабр</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/posts/development">Разработка</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/posts/administration">Администрирование</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/posts/design">Дизайн</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/posts/management">Менеджмент</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/posts/marketing">Маркетинг</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/posts/science">Научпоп</a>
+            </li>
+            <%# <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li> %>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <div>
+              <a href="/users/sign_up" role="button" class="btn btn-primary">Регистрация</a>
+              <a href="/users/sign_in" role="button" class="btn btn-dark">Войти</a>
+            </div>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
   
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    
+      
+        
 
-    <%= yield %>
+    <div class="row">
+      <div class="col-md-8">
 
+        <% if notice.present? || alert.present? %>
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        <% end %>
 
-        <!-- Sidebar Widgets Column -->
+        <%= yield %>
+
+      </div>
+
+      
+
+      <!-- Sidebar Widgets Column -->
       <div class="col-md-4">
 
         <!-- Search Widget -->
