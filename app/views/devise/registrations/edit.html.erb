@@ -5,44 +5,44 @@
   <div class="card-body">
    
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="field form-group">
-      <% f.label :username %>
-      <%= f.text_field :username, autofocus: true, autocomplete: "username", class:"form-control", placeholder:"Введите username" %>
-    </div>
+      <div class="field form-group">
+        <% f.label :username %>
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", class:"form-control", placeholder:"Введите username" %>
+      </div>
 
-    <div class="field form-group">
-      <% f.label :email %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Введите email" %>
-    </div>
+      <div class="field form-group">
+        <% f.label :email %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Введите email" %>
+      </div>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %>
-
-    <div class="field form-group mb-2">
-      <% f.label :password %>
-      <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"Новый пароль (Оставьте пустым, если не хотите сменить пароль)" %>
-      <% if @minimum_password_length %>
-        <small id="emailHelp" class="form-text text-muted"><%= @minimum_password_length %> characters minimum</small>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
-    </div>
 
-    <div class="field form-group">
-      <% f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Подтверждение пароля" %>
-    </div>
+      <div class="field form-group mb-2">
+        <% f.label :password %>
+        <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"Новый пароль (Оставьте пустым, если не хотите сменить пароль)" %>
+        <% if @minimum_password_length %>
+          <small id="emailHelp" class="form-text text-muted"><%= @minimum_password_length %> characters minimum</small>
+        <% end %>
+      </div>
 
-    <div class="field form-group mt-5">
-      <% f.label :current_password %>
-      <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control", placeholder:"Текущий пароль" %>
-    </div>
+      <div class="field form-group">
+        <% f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Подтверждение пароля" %>
+      </div>
 
-    <div class="actions">
-      <%= f.submit "Изменить", class:"btn btn-secondary" %>
-    </div>
-  <% end %>
+      <div class="field form-group mt-5">
+        <% f.label :current_password %>
+        <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control", placeholder:"Текущий пароль" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Изменить", class:"btn btn-secondary" %>
+      </div>
+    <% end %>
 
   </div>
 </div>

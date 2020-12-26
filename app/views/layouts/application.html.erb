@@ -46,9 +46,21 @@
           <ul class="navbar-nav ml-auto">
             <div>
               <% if user_signed_in? %>
-                <%= link_to 'Новый пост', posts_new_path, class:"btn btn-dark" %>
-                <%= link_to 'Edit profile', edit_user_registration_path, class:"btn btn-dark" %>
-                <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class:"btn btn-dark" %>
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                  <%= link_to 'Новый пост', posts_new_path, class:"btn btn-secondary" %>
+
+                  <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <%= current_user.username %>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                      <%= link_to 'Изменить профиль', edit_user_registration_path, class:"dropdown-item" %>
+                      <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class:"dropdown-item" %>
+                    </div>
+                  </div>
+                </div>
+                
+                
               <% else %>
                 <%= link_to 'Регистрация', new_user_registration_path, class:"btn btn-primary" %>
                 <%= link_to 'Войти', new_user_session_path, class:"btn btn-dark" %>
@@ -86,7 +98,7 @@
       <div class="col-md-4">
 
         <!-- Search Widget -->
-        <div class="card my-4">
+        <div class="card my-0">
           <h5 class="card-header">Search</h5>
           <div class="card-body">
             <div class="input-group">
