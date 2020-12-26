@@ -55,7 +55,8 @@ class PostsController < ApplicationController
 
   def post_params
     params[:post][:topic_id] = params[:post][:topic]
-    params.require(:post).permit(:title, :body, :topic_id)
+    params[:post][:user_id] = params[:post][:user]
+    params.require(:post).permit(:title, :body, :topic_id, :user_id)
   end
 
   def paginate(page_token, topic_id = nil)
