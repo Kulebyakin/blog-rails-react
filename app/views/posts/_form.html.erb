@@ -9,6 +9,7 @@
 <% end %>
 
 <%= form_for(:post, url: path, method: "post") do %>
+  <%= hidden_field(:post, :user, value: current_user.id) %>
   <div class="form-grop mt-3">
     <%= label(:post, :title, "Заголовок") %>
     <%= text_field(:post, :title, class: "form-control") %>
