@@ -13,7 +13,7 @@
 <div class="card mb-4">
   <div class="card-body">
     <h2 class="card-title"><%= post.title %></h2>
-    <p class="card-text"><%= post.body.length <= 2000 ? simple_format(post.body) : simple_format(post.body[0..2000]) %></p>
+    <p class="card-text"><%= post.body.length <= 600 ? simple_format(post.body) : simple_format(post.body[0..600]) %></p>
     <a href="/posts/<%= post.id %>" class="btn btn-primary">Читать дальше &rarr;</a>
   </div>
   <div class="card-footer text-muted">

@@ -14,7 +14,7 @@ class ReplyForm extends CommentsForm {
             onChange={this.handleBodyChange}></textarea>
         </div>
         <input type="hidden" value={this.props.csrf_token} />
-        <button type="submit" className="Btn btn-primery">Отправить</button>
+        <button type="submit" className="btn btn-primary">Отправить</button>
       </form>
     );
   }

@@ -45,8 +45,8 @@ class CommentsForm extends React.Component {
                 value={this.state.body}
                 onChange={this.handleBodyChange}></textarea>
             </div>
-            <input type="hidden" value="{this.props.csrf_token" />
-            <button type="submit" className="Btn btn-primery">Отправить</button>
+            <input type="hidden" value="{this.props.csrf_token}" />
+            <button type="submit" className="btn btn-primary">Отправить</button>
           </form>
         </div>
       </div>

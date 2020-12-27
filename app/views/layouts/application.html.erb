@@ -47,10 +47,10 @@
             <div>
               <% if user_signed_in? %>
                 <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                  <%= link_to 'Новый пост', posts_new_path, class:"btn btn-secondary" %>
+                  <%= link_to 'Новый пост', posts_new_path, class:"btn btn-light border" %>
 
                   <div class="btn-group" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-light border dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <%= current_user.username %>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
